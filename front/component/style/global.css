@@ -28,3 +28,13 @@ li {
 .z-up {
   z-index: 999;
 }
+
+/* style */
+body {
+  background-color: #141414;
+  color: #fff;
+}
+
+main {
+  margin-top: 137px !important;
+}
