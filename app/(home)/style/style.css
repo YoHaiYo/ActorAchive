@@ -1,0 +1,6 @@
+#home {
+  background-image: url("../../../front/img/home-bg-1.jpg");
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+}
