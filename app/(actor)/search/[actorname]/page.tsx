@@ -49,7 +49,7 @@ export default async function Page(
                   return (
                     <ul key={iidx}>
                       <li><img src={`${Poster_API}/${eel.backdrop_path}`} alt={eel.name} style={{ width: 300 }} /></li>
-                      <li>title : {eel.title}</li>
+                      <li>title : {eel.title || eel.original_name || eel.name}</li>
                     </ul>
                   )
                 })

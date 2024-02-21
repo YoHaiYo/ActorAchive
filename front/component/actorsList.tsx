@@ -41,6 +41,7 @@ export default function ActorsList() {
   return (
     <div>
       <h2>actors</h2>
+      <h3>페이지네이션</h3>
       {page > 1 && <button onClick={goToPreviousPage}>Before</button>}
       <input
         type="number"

@@ -11,7 +11,7 @@ export default function SearchActor() {
   };
 
   const handleSearch = () => {
-    router.push(`/actorname/${search}`); // 버튼 클릭 시, 입력된 search 값으로 라우팅
+    router.push(`/search/${search}`); // 버튼 클릭 시, 입력된 search 값으로 라우팅
   };
 
   return (

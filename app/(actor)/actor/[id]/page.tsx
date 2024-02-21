@@ -32,15 +32,16 @@ export default async function Page(
       <p>{actorData.place_of_birth}</p>
       <hr />
       <h3>출연작 (for cast)</h3>
-      {/* {castData.cast.map((el, idx) => {
+      {castData.cast.map((el, idx) => {
         return (
           <ul key={idx}>
+            <li> <img src={`${Poster_API}/${el.backdrop_path}`} alt={el.name} style={{ width: 300 }} /></li>
             <li>{el.title}</li>
             <li>vote_average : {el.vote_average}</li>
             <li>vote_count : {el.vote_count}</li>
           </ul>
         )
-      })} */}
+      })}
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import SearchActor from "../front/component/searchActor"
+import Navigation from "../front/component/navigation"
 
 export const metadata = {
   title: 'Next.js',
@@ -13,6 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navigation />
         <SearchActor />
         {children}
       </body>
