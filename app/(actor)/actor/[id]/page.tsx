@@ -1,6 +1,10 @@
 import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Poster_API } from "../../../../front/apiurl/apiurl";
 import ActorsCast from "../../../../front/component/actorsCast"
 
+export const metadata = {
+  title: "Actor"
+}
+
 interface IPrams {
   params: { id: string }
 }

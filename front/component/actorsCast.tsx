@@ -11,7 +11,7 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error("Fetching data failed", error));
-  }, [actor_id]); // 빈 배열을 전달하여 컴포넌트가 마운트될 때만 실행되게 함
+  }, []); // 빈 배열을 전달하여 컴포넌트가 마운트될 때만 실행되게 함
 
   if (!data) return <div>Loading...</div>;
   // console.log(data)
