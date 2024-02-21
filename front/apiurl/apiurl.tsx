@@ -17,3 +17,7 @@ export const Actor_Cast_API_2 = `/movie_credits?api_key=${apiKey}&language=ko-KR
 // Movie_detail_API_1{movie_id}Movie_detail_API_2
 export const Movie_detail_API_1 = `https://api.themoviedb.org/3/movie/`
 export const Movie_detail_API_2 = `?api_key=${apiKey}&language=ko-KR`
+
+// https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=WonBin
+export const Search_Actor_API = `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=`
+

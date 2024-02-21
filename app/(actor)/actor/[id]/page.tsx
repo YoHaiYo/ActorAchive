@@ -32,7 +32,7 @@ export default async function Page(
       <p>{actorData.place_of_birth}</p>
       <hr />
       <h3>출연작 (for cast)</h3>
-      {castData.cast.map((el, idx) => {
+      {/* {castData.cast.map((el, idx) => {
         return (
           <ul key={idx}>
             <li>{el.title}</li>
@@ -40,7 +40,7 @@ export default async function Page(
             <li>vote_count : {el.vote_count}</li>
           </ul>
         )
-      })}
+      })} */}
     </div>
   )
 }

@@ -16,7 +16,7 @@ export default function ActorsList() {
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error("Fetching data failed", error));
-  }, [page]);
+  }, [data, page]);
 
   const goToNextPage = () => {
     setPage(prevPage => prevPage + 1);
