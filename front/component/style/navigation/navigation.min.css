@@ -1,0 +1,1 @@
+#hd .mobile-view{display:none !important}@media(max-width: 992px){#hd .pc-view{display:none !important}#hd .mobile-view{display:block !important}#hd .navi{transition:.5s;transform:translateX(100%)}#hd .active{transform:translateX(0%)}}

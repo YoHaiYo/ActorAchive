@@ -12,3 +12,5 @@
 (actor)\actor\[id]\page.tsx
 
 * ★ 비동기로 데이터 랜더링 : 서버와 클라이언트 확실히 구분하기 ! 클라이언트에서만 리액트 훅 사용해서 컨트롤. 서버에선 유저가 랜더링전에 정적 html으로 되기 때문!
+
+* import { Metadata } from "next" 로 페이지마다 meta title 따로관리

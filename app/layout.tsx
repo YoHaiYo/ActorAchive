@@ -1,6 +1,9 @@
-import SearchActor from "../front/component/searchActor"
-import Navigation from "../front/component/navigation"
 import { Metadata } from "next"
+import Navigation from "../front/component/navigation"
+import Footer from "../front/component/footer"
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../front/component/style/global.css'
 
 export const metadata: Metadata = {
   title: {
@@ -19,8 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navigation />
-        <SearchActor />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

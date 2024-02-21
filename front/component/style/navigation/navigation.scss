@@ -1,0 +1,32 @@
+#hd {
+  // background-color: orange;
+
+  .mobile-view {
+    display: none !important;
+  }
+
+
+}
+
+@media (max-width: 992px) {
+  #hd {
+    .pc-view {
+      display: none !important;
+    }
+
+    .mobile-view {
+      display: block !important;
+      // position: relative;
+      // left: 100%;
+    }
+
+    .navi {
+      transition: .5s;
+      transform: translateX(100%);
+    }
+
+    .active {
+      transform: translateX(0%);
+    }
+  }
+}

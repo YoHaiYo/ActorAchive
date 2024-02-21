@@ -1,0 +1,30 @@
+/* reset */
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* common */
+.w-0 {
+  width: 0;
+  white-space: nowrap;
+}
+
+.z-up {
+  z-index: 999;
+}

@@ -15,7 +15,7 @@ export default function SearchActor() {
   };
 
   return (
-    <div>
+    <>
       <input
         type="text"
         value={search}
@@ -23,6 +23,6 @@ export default function SearchActor() {
         placeholder="배우 이름 검색"
       />
       <button onClick={handleSearch}>검색</button> {/* 검색 버튼에 클릭 이벤트 핸들러 연결 */}
-    </div>
+    </>
   );
 }
