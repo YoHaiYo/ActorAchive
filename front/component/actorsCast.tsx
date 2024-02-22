@@ -6,6 +6,7 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
   // Popular_Actor_API
   const Actor_Cast_API = `${Actor_Cast_API_1}${actor_id}${Actor_Cast_API_2}`
 
+
   useEffect(() => {
     fetch(Actor_Cast_API)
       .then(response => response.json())
@@ -42,8 +43,8 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
 
   return (
     <ul >
-      <li>{actor_id}</li>
-      <li>{actor_name}</li>
+      {/* <li>{actor_id}</li> */}
+      {/* <li>{actor_name}</li> */}
       <li><h3>total_rating : {total_rating}</h3></li>
       <li>actor_popularity : {actor_individual_popularity}</li>
       <li>movieNum : {movieNum}</li>

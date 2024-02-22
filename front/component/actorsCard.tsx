@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react'
 import { Popular_Actor_API, Poster_API } from '../apiurl/apiurl';
 import Link from 'next/link';
 import ActorsCast from './actorsCast';
+import './style/actorsCard/style.min.css'
 
-export default function ActorsList() {
+export default function ActorsCard() {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(1);
   const [inputPage, setInputPage] = useState(1); // 사용자 입력 페이지 번호를 위한 state 추가
@@ -40,7 +41,7 @@ export default function ActorsList() {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div>
+    <section>
       <h2>actors</h2>
       <h3>페이지네이션</h3>
       {page > 1 ? <button onClick={goToPreviousPage}>Before</button> : <button>X-Before</button>}
@@ -51,22 +52,24 @@ export default function ActorsList() {
       />
       {page < 500 ? <button onClick={goToNextPage}>Next</button> : <button>X-Next</button>}
 
-      {data.results.map((el, idx) => (
-        <Link href={`/actor/${el.id}`} key={idx}>
-          <div>
-            <p><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></p>
-            <p>{el.id}</p>
-            <p>{el.name}</p>
-            <p>{el.popularity}</p>
-            <ActorsCast
-              actor_id={el.id}
-              actor_name={el.name}
-              actor_popularity={el.popularity}
-            />
-          </div>
-        </Link>
-      ))}
-    </div>
+      <div className='actorcard'>
+        {data.results.map((el, idx) => (
+          <Link href={`/actor/${el.id}`} key={idx}>
+            <div>
+              <p>{el.name}</p>
+              <p><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></p>
+              {/* <p>{el.id}</p> */}
+              {/* <p>{el.popularity}</p> */}
+              <ActorsCast
+                actor_id={el.id}
+                actor_name={el.name}
+                actor_popularity={el.popularity}
+              />
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
 
