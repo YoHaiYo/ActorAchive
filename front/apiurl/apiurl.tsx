@@ -1,4 +1,4 @@
-const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_ACTOR_API_KEY;
 
 export const Poster_API = `https://image.tmdb.org/t/p/original`
 export const Popular_Actor_API = `https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&language=ko-KR`
