@@ -43,13 +43,13 @@ export default function ActorsList() {
     <div>
       <h2>actors</h2>
       <h3>페이지네이션</h3>
-      {page > 1 && <button onClick={goToPreviousPage}>Before</button>}
+      {page > 1 ? <button onClick={goToPreviousPage}>Before</button> : <button>X-Before</button>}
       <input
         type="number"
         value={page}
         onChange={handleInputChange}
       />
-      <button onClick={goToNextPage}>Next</button>
+      {page < 500 ? <button onClick={goToNextPage}>Next</button> : <button>X-Next</button>}
 
       {data.results.map((el, idx) => (
         <Link href={`/actor/${el.id}`} key={idx}>

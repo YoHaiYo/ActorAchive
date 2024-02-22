@@ -23,9 +23,9 @@ export default function Navigation() {
         <div className="navi navi-ani-off d-flex d-nonexxx flex-grow-1 justify-content-between">
           <ul id="gnb" className="d-flex flex-grow-1 justify-content-center">
             <li className="mx-3"><a href="/">Home</a>{path === "/" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/all">all</a>{path === "/all" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/criteria">criteria</a>{path === "/criteria" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/about">about</a>{path === "/about" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/actor">Actor</a>{path === "/actor" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/criteria">Criteria</a>{path === "/criteria" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/about">About</a>{path === "/about" ? "★" : ""}</li>
           </ul>
         </div>
         <div className="d-flex w-0 justify-content-end">
@@ -39,9 +39,9 @@ export default function Navigation() {
         <div className={`${toggle ? "active" : ""} navi position-relative text-end`}>
           <ul id="gnb" className="text-center">
             <li className="mx-3"><a href="/">Home</a>{path === "/" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/all">all</a>{path === "/all" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/criteria">criteria</a>{path === "/criteria" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/about">about</a>{path === "/about" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/actor">Actor</a>{path === "/actor" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/criteria">Criteria</a>{path === "/criteria" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/about">About</a>{path === "/about" ? "★" : ""}</li>
           </ul>
           <div className="d-flex justify-content-center">
             <SearchActor />
