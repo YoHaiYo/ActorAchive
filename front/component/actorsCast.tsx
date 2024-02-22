@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { Actor_Cast_API_1, Actor_Cast_API_2, Popular_Actor_API } from '../apiurl/apiurl';
+import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Popular_Actor_API } from '../apiurl/apiurl';
 
 export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
   const [data, setData] = useState(null);
+  const [actorDetails, setActorDetails] = useState(null);
+
   // Popular_Actor_API
   const Actor_Cast_API = `${Actor_Cast_API_1}${actor_id}${Actor_Cast_API_2}`
-
+  const Actor_Detail_API = `${Actor_Detail_API_1}${actor_id}${Actor_Detail_API_2}`
 
   useEffect(() => {
-    fetch(Actor_Cast_API)
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error("Fetching data failed", error));
-  }, [actor_id]); // 빈 배열을 전달하여 컴포넌트가 마운트될 때만 실행되게 함
+    Promise.all([
+      fetch(Actor_Cast_API).then(response => response.json()),
+      fetch(Actor_Detail_API).then(response => response.json())
+    ]).then(([data, actorDetails]) => {
+      setData(data);
+      setActorDetails(actorDetails);
+    }).catch(error => console.error("Fetching data failed", error));
+  }, [actor_id]);
 
   if (!data) return <div>Loading...</div>;
   // console.log(data)
@@ -45,6 +50,8 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
     <ul >
       {/* <li>{actor_id}</li> */}
       {/* <li>{actor_name}</li> */}
+      <li>{actorDetails.birthday}</li>
+      <li>{actorDetails.place_of_birth}</li>
       <li><h3>total_rating : {total_rating}</h3></li>
       <li>actor_popularity : {actor_individual_popularity}</li>
       <li>movieNum : {movieNum}</li>
