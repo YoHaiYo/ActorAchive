@@ -1,11 +1,26 @@
 #hd {
-  // background-color: orange;
+
+  .pc-view {
+
+    #gnb {
+      border: 4px solid #1F1F1F;
+      background-color: #0F0F0F;
+
+      .nav-active {
+        background-color: #1A1A1A;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+
+        a {
+          color: #E50000;
+        }
+      }
+    }
+  }
 
   .mobile-view {
     display: none !important;
   }
-
-
 }
 
 @media (max-width: 992px) {

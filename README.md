@@ -1,6 +1,6 @@
 ### 정리할내용
 
-* .env.local로 apikey관리 : NEXT_PUBLIC_API_KEY=your_api_key 형식으로 작성
+* .env.local로 apikey관리 : NEXT_PUBLIC_ACTOR_API_KEY=your_api_key 형식으로 작성
 
 * prefetch로 로딩속도 향상.
 

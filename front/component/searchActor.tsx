@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Next.js 라우팅을 위해 useRouter 훅 추가
+import { Search } from 'react-bootstrap-icons';
+
 
 export default function SearchActor() {
   const [search, setSearch] = useState(""); // 검색어 상태 관리
@@ -22,15 +24,27 @@ export default function SearchActor() {
   };
 
   return (
-    <>
+    <div
+      className='d-flex align-items-center py-1 px-2'
+      style={{
+        backgroundColor: 'transparent',
+        border: "1px solid #BFBFBF"
+      }}>
       <input
         type="text"
         value={search}
         onChange={handleInputChange}
         placeholder="배우 이름 검색"
         onKeyPress={handleKeyPress} // 엔터 키 입력 감지를 위한 이벤트 핸들러 추가
+        style={{
+          backgroundColor: "transparent",
+          width: "180px",
+          border: "none",
+          padding: "0 .5rem"
+        }}
       />
-      <button onClick={handleSearch}>검색</button> {/* 검색 버튼에 클릭 이벤트 핸들러 연결 */}
-    </>
+      <Search onClick={handleSearch} style={{ cursor: "pointer" }} />
+      {/* <button style={{ backgroundColor: "transparent" }}></button>  */}
+    </div>
   );
 }

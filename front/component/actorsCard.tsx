@@ -6,10 +6,27 @@ import Link from 'next/link';
 import ActorsCast from './actorsCast';
 import './style/actorsCard/style.min.css'
 
+
+
 export default function ActorsCard() {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(1);
   const [inputPage, setInputPage] = useState(1); // 사용자 입력 페이지 번호를 위한 state 추가
+
+  // pagePagination UI 관리
+  function ActorPagination() {
+    return (
+      <div className='actor-pagination d-flex justify-content-center'>
+        {page > 1 ? <button className='btn-active maincolor-bg' onClick={goToPreviousPage}>Before</button> : <button className='btn-noactive' >X-Before</button>}
+        <input
+          type="number"
+          value={page}
+          onChange={handleInputChange}
+        />
+        {page < 500 ? <button className='btn-active maincolor-bg' onClick={goToNextPage}>Next</button> : <button className='btn-noactive' >X-Next</button>}
+      </div>
+    )
+  }
 
   useEffect(() => {
     const Popular_Actor_API_page = `${Popular_Actor_API}&page=${page}`;
@@ -42,15 +59,7 @@ export default function ActorsCard() {
 
   return (
     <section>
-      <div className='actor-pagination d-flex justify-content-center'>
-        {page > 1 ? <button className='btn-active maincolor-bg' onClick={goToPreviousPage}>Before</button> : <button className='btn-noactive' >X-Before</button>}
-        <input
-          type="number"
-          value={page}
-          onChange={handleInputChange}
-        />
-        {page < 500 ? <button className='btn-active maincolor-bg' onClick={goToNextPage}>Next</button> : <button className='btn-noactive' >X-Next</button>}
-      </div>
+      <ActorPagination />
 
       <div className='actorcard-wrap'>
         {data.results.map((el, idx) => (
@@ -67,6 +76,7 @@ export default function ActorsCard() {
           </Link>
         ))}
       </div>
+      <ActorPagination />
     </section>
   );
 }

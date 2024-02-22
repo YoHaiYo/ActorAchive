@@ -15,17 +15,17 @@ export default function Navigation() {
   const path = usePathname();
   // console.log(path)
   return (
-    <header id="hd" className="container">
+    <header id="hd">
       {/* pc-view */}
-      <nav className="pc-view fixed-top py-4 container-fluid border-bottom
+      <nav className="pc-view fixed-top py-4 container container-fluidxxx
       d-flex justify-content-between align-items-center">
         <h1 className="w-0 z-up"><a href="/">LogoPC</a></h1>
-        <div className="navi navi-ani-off d-flex d-nonexxx flex-grow-1 justify-content-between">
-          <ul id="gnb" className="d-flex flex-grow-1 justify-content-center">
-            <li className="mx-3"><a href="/">Home</a>{path === "/" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/actor">Actor</a>{path === "/actor" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/criteria">Criteria</a>{path === "/criteria" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/about">About</a>{path === "/about" ? "★" : ""}</li>
+        <div className="navi navi-ani-off d-flex justify-content-between">
+          <ul id="gnb" className="d-flex justify-content-center align-items-center rounded-4 p-3">
+            <li className={`mx-3 ${path === "/" ? "nav-active" : ""}`}><a href="/">Home</a></li>
+            <li className={`mx-3 ${path === "/actor" ? "nav-active" : ""}`}><a href="/actor">Actor</a></li>
+            <li className={`mx-3 ${path === "/criteria" ? "nav-active" : ""}`}><a href="/criteria">Criteria</a></li>
+            <li className={`mx-3 ${path === "/about" ? "nav-active" : ""}`}><a href="/about">About</a></li>
           </ul>
         </div>
         <div className="d-flex w-0 justify-content-end">
