@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Popular_Actor_API } from '../apiurl/apiurl';
+import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Popular_Actor_API, Poster_API } from '../apiurl/apiurl';
 
 export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
   const [data, setData] = useState(null);
@@ -22,10 +22,6 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
   if (!data) return <div>Loading...</div>;
   // console.log(data)
 
-  // el.popularity의 총합 계산
-  // const totalCastPopularity = data.cast.reduce((acc, el) => acc + el.popularity, 0);
-  // const totalCrewPopularity = data.crew.reduce((acc, el) => acc + el.popularity, 0);
-  // const totalPopularity = totalCastPopularity + totalCrewPopularity
 
   const calcTotal = (x) => {
     const totalCast = data.cast.reduce((acc, el) => acc + el[x], 0);
@@ -49,29 +45,16 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
   return (
     <ul >
       {/* <li>{actor_id}</li> */}
-      {/* <li>{actor_name}</li> */}
-      <li>{actorDetails.birthday}</li>
-      <li>{actorDetails.place_of_birth}</li>
+      <h3>{actor_name}</h3>
+      <p><img src={`${Poster_API}/${actorDetails.profile_path}`} alt={actorDetails.name} style={{ width: 300 }} /></p>
+      <li>birthday : {actorDetails.birthday}</li>
+      <li>place_of_birth : {actorDetails.place_of_birth}</li>
       <li><h3>total_rating : {total_rating}</h3></li>
       <li>actor_popularity : {actor_individual_popularity}</li>
       <li>movieNum : {movieNum}</li>
       <li>totalPopularity : {total_popularity}</li>
       <li>average_vote_average : {average_vote_average}</li>
       <li>total vote_count : {total_vote_count}</li>
-      {/* <h3>cast</h3> */}
-      {/* {
-        data.cast.map((el, idx) => {
-          return (
-            <ul key={idx}>
-              <li><h3>{el.title}</h3></li>
-              <li>movieId : {el.id}</li>
-              <li>popularity : {el.popularity}</li>
-              <li>vote_average : {el.vote_average}</li>
-              <li>vote_count : {el.vote_count}</li>
-            </ul>
-          )
-        })
-      } */}
       <hr />
     </ul>
   )

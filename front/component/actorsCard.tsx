@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { Popular_Actor_API, Poster_API } from '../apiurl/apiurl';
 import Link from 'next/link';
 import ActorsCast from './actorsCast';
@@ -54,12 +54,10 @@ export default function ActorsCard() {
 
       <div className='actorcard'>
         {data.results.map((el, idx) => (
-          <Link href={`/actor/${el.id}`} key={idx}>
+          <Link prefetch href={`/actor/${el.id}`} key={idx}>
             <div>
-              <p>{el.name}</p>
-              <p><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></p>
-              {/* <p>{el.id}</p> */}
-              {/* <p>{el.popularity}</p> */}
+              {/* <p>{el.name}</p> */}
+              {/* <p><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></p> */}
               <ActorsCast
                 actor_id={el.id}
                 actor_name={el.name}
