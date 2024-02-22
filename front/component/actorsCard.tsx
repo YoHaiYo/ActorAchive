@@ -42,17 +42,17 @@ export default function ActorsCard() {
 
   return (
     <section>
-      <h2>actors</h2>
-      <h3>페이지네이션</h3>
-      {page > 1 ? <button onClick={goToPreviousPage}>Before</button> : <button>X-Before</button>}
-      <input
-        type="number"
-        value={page}
-        onChange={handleInputChange}
-      />
-      {page < 500 ? <button onClick={goToNextPage}>Next</button> : <button>X-Next</button>}
+      <div className='actor-pagination d-flex justify-content-center'>
+        {page > 1 ? <button className='btn-active maincolor-bg' onClick={goToPreviousPage}>Before</button> : <button className='btn-noactive' >X-Before</button>}
+        <input
+          type="number"
+          value={page}
+          onChange={handleInputChange}
+        />
+        {page < 500 ? <button className='btn-active maincolor-bg' onClick={goToNextPage}>Next</button> : <button className='btn-noactive' >X-Next</button>}
+      </div>
 
-      <div className='actorcard'>
+      <div className='actorcard-wrap'>
         {data.results.map((el, idx) => (
           <Link prefetch href={`/actor/${el.id}`} key={idx}>
             <div>

@@ -31,31 +31,65 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
   }
 
   // 배우 5대 지표
-  const total_popularity = calcTotal("popularity") // 1
-  const total_vote_count = calcTotal("vote_count") // 2
-
-  const total_vote_average = calcTotal("vote_average")
-  const movieNum = data.cast.length + data.crew.length // 3
-  const average_vote_average = total_vote_average / movieNum // 4
-  const actor_individual_popularity = actor_popularity;// 5 
+  const total_popularity: number = Number(calcTotal("popularity").toFixed(2)) // 1
+  const total_vote_count: number = calcTotal("vote_count") // 2
+  const total_vote_average: number = calcTotal("vote_average")
+  const movieNum: number = data.cast.length + data.crew.length // 3
+  const average_vote_average: number = Number((total_vote_average / movieNum).toFixed(2)) // 4 : 출현영화 전체 평균평점
+  const actor_individual_popularity: number = actor_popularity;// 5 
 
   // 종합지표 (계수 관리하기)
-  const total_rating = total_popularity + total_vote_count + movieNum + average_vote_average + actor_individual_popularity
+  const total_rating: number = Number((total_popularity + total_vote_count + movieNum + average_vote_average + actor_individual_popularity).toFixed(2))
 
   return (
-    <ul >
+
+    <div className='actorcard border'>
       {/* <li>{actor_id}</li> */}
-      <h3>{actor_name}</h3>
-      <p><img src={`${Poster_API}/${actorDetails.profile_path}`} alt={actorDetails.name} style={{ width: 300 }} /></p>
-      <li>birthday : {actorDetails.birthday}</li>
-      <li>place_of_birth : {actorDetails.place_of_birth}</li>
-      <li><h3>total_rating : {total_rating}</h3></li>
-      <li>actor_popularity : {actor_individual_popularity}</li>
-      <li>movieNum : {movieNum}</li>
-      <li>totalPopularity : {total_popularity}</li>
-      <li>average_vote_average : {average_vote_average}</li>
-      <li>total vote_count : {total_vote_count}</li>
-      <hr />
-    </ul>
+      <div className='m-3'>
+        <div className='d-flex justify-content-between align-items-center px-3'>
+          <p className='p-3 h2 my-0'>{actor_name}</p>
+          <p className='maincolor maincolor-border my-0 h4 px-2 py-1 rounded-5'>{total_rating}</p>
+        </div>
+        <div className='d-flex justify-content-center'>
+          <p>{actorDetails.place_of_birth} </p>
+          <p className='mx-1'>|</p>
+          <p>{actorDetails.birthday}</p>
+        </div>
+      </div>
+
+      <div className='text-center'>
+        <img src={`${Poster_API}/${actorDetails.profile_path}`} alt={actorDetails.name} style={{ width: 300 }} />
+      </div>
+
+      <div className='d-flex justify-content-between p-3'>
+        <div>
+          <span>Rating : </span>
+          <span className='maincolor'>{average_vote_average}</span>
+        </div>
+        <div>
+          <span>Votes : </span>
+          <span className='maincolor'>{total_vote_count}</span>
+        </div>
+      </div>
+      <div className='d-flex justify-content-between px-3'>
+        <div>
+          <span>Movies :</span>
+          <span className='maincolor'> {movieNum}</span>
+        </div>
+        <div>
+          <span>Personal popularity : </span>
+          <span className='maincolor'>{actor_individual_popularity}</span>
+        </div>
+      </div>
+      <div className='d-flex justify-content-between p-3'>
+        <div>
+          <span>Total Popularity : </span>
+          <span className='maincolor'>{total_popularity}</span>
+        </div>
+        <div>
+          <span>(?)</span>
+        </div>
+      </div>
+    </div>
   )
 }

@@ -19,6 +19,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* common */
 .w-0 {
   width: 0;
@@ -27,6 +31,23 @@ li {
 
 .z-up {
   z-index: 999;
+}
+
+/* main color */
+:root {
+  --actor-red: #E50000;
+}
+
+.maincolor {
+  color: var(--actor-red) !important;
+}
+
+.maincolor-bg {
+  background-color: var(--actor-red) !important;
+}
+
+.maincolor-border {
+  border: 1px solid var(--actor-red) !important;
 }
 
 /* style */

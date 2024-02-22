@@ -1,4 +1,8 @@
-.actorcard {
+.actor-pagination input {
+  width: 50px;
+}
+
+.actorcard-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -6,12 +10,11 @@
   padding: 20px;
   gap: 20px;
 }
-.actorcard h2,
-.actorcard h3 {
-  width: 100%;
-  text-align: center;
+.actorcard-wrap .actorcard {
+  color: #fff;
+  max-width: 450px;
 }
-.actorcard > div {
+.actorcard-wrap > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,18 +26,18 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.actorcard > div:hover {
+.actorcard-wrap > div:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-.actorcard > div img {
+.actorcard-wrap > div img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
 }
-.actorcard > div p {
+.actorcard-wrap > div p {
   margin: 5px 0;
 }
-.actorcard button {
+.actorcard-wrap button {
   padding: 10px 20px;
   margin: 0 5px;
   background-color: #007bff;
@@ -43,11 +46,11 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.actorcard button:disabled, .actorcard button.disabled {
+.actorcard-wrap button:disabled, .actorcard-wrap button.disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-.actorcard input[type=number] {
+.actorcard-wrap input[type=number] {
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
@@ -55,11 +58,11 @@
 }
 
 @media (max-width: 442px) {
-  .actorcard {
+  .actorcard-wrap {
     flex-direction: column;
     align-items: center;
   }
-  .actorcard > div {
+  .actorcard-wrap > div {
     max-width: 90%;
   }
 }
