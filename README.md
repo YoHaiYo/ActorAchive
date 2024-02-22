@@ -1,5 +1,7 @@
 ### 정리할내용
 
+* .env.local로 apikey관리 : NEXT_PUBLIC_API_KEY=your_api_key 형식으로 작성
+
 * prefetch로 로딩속도 향상.
 
 * 배우id값을 라우터 주소로 전달하고,actor/[id]폴더로 받기
