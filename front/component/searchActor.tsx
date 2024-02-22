@@ -14,6 +14,13 @@ export default function SearchActor() {
     router.push(`/search/${search}`); // 버튼 클릭 시, 입력된 search 값으로 라우팅
   };
 
+  // 엔터 키를 누를 때 검색 실행
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <>
       <input
@@ -21,6 +28,7 @@ export default function SearchActor() {
         value={search}
         onChange={handleInputChange}
         placeholder="배우 이름 검색"
+        onKeyPress={handleKeyPress} // 엔터 키 입력 감지를 위한 이벤트 핸들러 추가
       />
       <button onClick={handleSearch}>검색</button> {/* 검색 버튼에 클릭 이벤트 핸들러 연결 */}
     </>

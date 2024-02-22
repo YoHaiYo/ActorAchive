@@ -19,13 +19,13 @@ export default function Navigation() {
       {/* pc-view */}
       <nav className="pc-view fixed-top py-4 container-fluid border-bottom
       d-flex justify-content-between align-items-center">
-        <h1 className="w-0 z-up"><Link href="/">LogoPC</Link></h1>
+        <h1 className="w-0 z-up"><a href="/">LogoPC</a></h1>
         <div className="navi navi-ani-off d-flex d-nonexxx flex-grow-1 justify-content-between">
           <ul id="gnb" className="d-flex flex-grow-1 justify-content-center">
-            <li className="mx-3"><Link href="/">Home</Link>{path === "/" ? "★" : ""}</li>
-            <li className="mx-3"><Link href="/all">all</Link>{path === "/all" ? "★" : ""}</li>
-            <li className="mx-3"><Link href="/criteria">criteria</Link>{path === "/criteria" ? "★" : ""}</li>
-            <li className="mx-3"><Link href="/about">about</Link>{path === "/about" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/">Home</a>{path === "/" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/all">all</a>{path === "/all" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/criteria">criteria</a>{path === "/criteria" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/about">about</a>{path === "/about" ? "★" : ""}</li>
           </ul>
         </div>
         <div className="d-flex w-0 justify-content-end">
@@ -34,14 +34,14 @@ export default function Navigation() {
       </nav>
       {/* mobile-view */}
       <nav className={`mobile-view fixed-top py-4 d-flex justify-content-center border-bottom`}>
-        <h1 className="w-0 z-up"><Link href="/">LogoMobile</Link></h1>
+        <h1 className="w-0 z-up"><a href="/">LogoMobile</a></h1>
         <div className="d-flex justify-content-end"><button onClick={() => setToggle(!toggle)}>햄버거바</button></div>
         <div className={`${toggle ? "active" : ""} navi position-relative text-end`}>
           <ul id="gnb" className="text-center">
-            <li className="mx-3"><Link href="/">Home</Link>{path === "/" ? "★" : ""}</li>
-            <li className="mx-3"><Link href="/all">all</Link>{path === "/all" ? "★" : ""}</li>
-            <li className="mx-3"><Link href="/criteria">criteria</Link>{path === "/criteria" ? "★" : ""}</li>
-            <li className="mx-3"><Link href="/about">about</Link>{path === "/about" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/">Home</a>{path === "/" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/all">all</a>{path === "/all" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/criteria">criteria</a>{path === "/criteria" ? "★" : ""}</li>
+            <li className="mx-3"><a href="/about">about</a>{path === "/about" ? "★" : ""}</li>
           </ul>
           <div className="d-flex justify-content-center">
             <SearchActor />
