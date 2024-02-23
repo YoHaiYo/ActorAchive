@@ -3,23 +3,60 @@
 }
 
 .actor-detail {
+  --bs-gutter-x: 10.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+
   .actor-info {
-    border: 1px solid white;
-    width: auto;
+    // border: 1px solid white;
+
+    .actor-info-content {
+
+      background-color: #1F1F1F;
+      padding: 1rem;
+      border-radius: .5rem;
+      color: white;
+
+      .actor-info-name {
+        font-size: 1.5rem;
+        margin: .5rem 0;
+      }
+
+      img {
+        border-radius: .5rem;
+      }
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      ;
+    }
   }
 
-  .actor-detail-movie {
+  .actor-detail-moviecard {
     padding: 1rem;
-
+    margin: .5rem;
+    background-color: #1F1F1F;
+    border-radius: .5rem;
 
     img {
       // 원본비율 100 : 52 
-      // height: 0;
-      // width: 100%;
-      // padding-top: 52%;
-
       width: var(--img-width);
       height: calc(var(--img-width) * 0.52);
+      border-radius: .5rem;
+    }
+
+    .movie-title {
+      font-size: 1.2rem;
     }
   }
+}
+
+.actor-info-gray {
+  color: #BFBFBF;
 }
