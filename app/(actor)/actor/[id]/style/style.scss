@@ -2,6 +2,22 @@
   --img-width: 300px
 }
 
+@media (max-width: 768px) {
+  :root {
+    --img-width: 90vw
+  }
+
+  .actor-detail {
+    --bs-gutter-x: 0.5rem !important;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 .actor-detail {
   --bs-gutter-x: 10.5rem;
   --bs-gutter-y: 0;

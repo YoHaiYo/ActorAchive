@@ -1,5 +1,6 @@
 import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Poster_API, Search_Actor_API } from "../../../../front/apiurl/apiurl";
 import ActorsCast from "../../../../front/component/actorsCast";
+import "./style/style.css"
 export const metadata = {
   title: "Search"
 }
@@ -29,37 +30,37 @@ export default async function Page(
   const actorData = await getActorDetail(actorname);
 
   return (
-    <div>
-      <p>actor 세부페이지</p>
-      {/* <p>id : {id}</p> */}
-      {/* <img src={`${Poster_API}/${actorData.profile_path}`} alt={actorData.name} style={{ width: 300 }} /> */}
-      {/* <p>{actorData.name}</p>
-      <p>{actorData.birthday}</p>
-      <p>{actorData.place_of_birth}</p> */}
-      <hr />
-
-      <h3>검색결과</h3>
+    <section className="search-page">
+      {/* <h3>검색결과</h3> */}
       {actorData.results.map((el, idx) => {
         return (
-          <ul key={idx}>
-            <li><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></li>
-            <li>{el.name}</li>
-            <li>
-              <p>Known For</p>
-              {
-                el.known_for.map((eel, iidx) => {
-                  return (
-                    <ul key={iidx}>
-                      <li><img src={`${Poster_API}/${eel.backdrop_path}`} alt={eel.name} style={{ width: 300 }} /></li>
-                      <li>title : {eel.title || eel.original_name || eel.name}</li>
-                    </ul>
-                  )
-                })
-              }
-            </li>
-          </ul>
+          <div key={idx}>
+            <div className="d-md-flex">
+              <div>
+                <div className="actor-info-content">
+                  <div><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} /></div>
+                  <p className="actor-info-name text-center">{el.name}</p>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-center text-white my-3">Filmography</h3>
+                <div className="d-flex flex-wrap justify-content-center">
+                  {
+                    el.known_for.map((eel, iidx) => {
+                      return (
+                        <div className="movies text-center actor-info-content" key={iidx}>
+                          <div className="text-center"><img src={`${Poster_API}/${eel.backdrop_path}`} alt={eel.name} /></div>
+                          <p>{eel.title || eel.original_name || eel.name}</p>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
         )
       })}
-    </div>
+    </section>
   )
 }

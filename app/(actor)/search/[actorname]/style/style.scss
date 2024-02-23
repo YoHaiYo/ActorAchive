@@ -1,0 +1,61 @@
+.search-page {
+  --bs-gutter-x: 10.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+
+  .actor-info-content {
+
+    background-color: #1F1F1F;
+    padding: 1rem;
+    border-radius: .5rem;
+    color: white;
+    margin: 1rem;
+    text-align: center;
+
+    .actor-info-name {
+      font-size: 1.5rem;
+      margin: .5rem 0;
+    }
+
+    img {
+      border-radius: .5rem;
+      width: 300px;
+      // height: 168.13px;
+    }
+
+    p {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+    }
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .search-page {
+    --bs-gutter-x: 0.0rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .actor-info-content {
+    img {
+      width: 80vw;
+    }
+  }
+
+  .movies {
+    img {
+      width: 90vw;
+    }
+  }
+}

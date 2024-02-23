@@ -44,10 +44,12 @@ export default async function Page(
   return (
     <section className="actor-detail ">
       {/* <p>id : {id}</p> */}
-      <div className="d-lg-flex">
+      <div className="d-md-flex">
         <div className="actor-info">
           <div className="actor-info-content">
-            <img src={`${Poster_API}/${actorData.profile_path}`} alt={actorData.name} style={{ width: 300 }} />
+            <div className="text-center">
+              <img src={`${Poster_API}/${actorData.profile_path}`} alt={actorData.name} style={{ width: 300 }} />
+            </div>
             <p className="actor-info-name text-center">{actorData.name}</p>
             <div className="actor-info-gray d-flex align-items-center">
               <Calendar2DateFill className="me-2" />
@@ -61,31 +63,31 @@ export default async function Page(
             <p>{actorData.place_of_birth}</p>
           </div>
         </div>
-        {/* <h3>출연작 (for cast)</h3> */}
-        <div className="d-flex flex-wrap justify-content-center">
-          {castData.cast.map((el, idx) => {
-            return (
-              <div className="actor-detail-moviecard" key={idx}>
-                <div className="d-flex justify-content-between mx-2 align-items-center">
-                  <p className="me-2">vote: {el.vote_count}</p>
-                  <div className="d-flex">
-                    <p className="maincolor me-1">{el.vote_average.toFixed(1)}</p>
-                    <p className="me-2 maincolor">
-                      {ratingToStars(el.vote_average)}
-                    </p>
+        <div>
+          {/* <h3 className="text-center text-white my-3">Filmography</h3> */}
+          <div className="d-flex flex-wrap justify-content-center">
+            {castData.cast.map((el, idx) => {
+              return (
+                <div className="actor-detail-moviecard" key={idx}>
+                  <div className="d-flex justify-content-between mx-2 align-items-center">
+                    <p className="me-2">vote: {el.vote_count}</p>
+                    <div className="d-flex">
+                      <p className="maincolor me-1">{el.vote_average.toFixed(1)}</p>
+                      <p className="me-2 maincolor">
+                        {ratingToStars(el.vote_average)}
+                      </p>
+                    </div>
                   </div>
-
+                  <div className="d-flex justify-content-center my-2">
+                    <img src={`${Poster_API}/${el.backdrop_path}`} alt={el.name} />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <p className="me-2 movie-title">{el.title}</p>
+                  </div>
                 </div>
-                <div className="d-flex justify-content-center my-2">
-                  <img src={`${Poster_API}/${el.backdrop_path}`} alt={el.name} />
-                </div>
-
-                <div className="d-flex justify-content-center">
-                  <p className="me-2 movie-title">{el.title}</p>
-                </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

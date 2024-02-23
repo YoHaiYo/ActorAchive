@@ -1,0 +1,47 @@
+.search-page {
+  --bs-gutter-x: 10.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+.search-page .actor-info-content {
+  background-color: #1F1F1F;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  margin: 1rem;
+  text-align: center;
+}
+.search-page .actor-info-content .actor-info-name {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+.search-page .actor-info-content img {
+  border-radius: 0.5rem;
+  width: 300px;
+}
+.search-page .actor-info-content p {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .search-page {
+    --bs-gutter-x: 0.0rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .actor-info-content img {
+    width: 80vw;
+  }
+  .movies img {
+    width: 90vw;
+  }
+}
