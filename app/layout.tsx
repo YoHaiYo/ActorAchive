@@ -1,3 +1,4 @@
+// "use client"
 import { Metadata } from "next"
 import Navigation from "../front/component/navigation"
 import Footer from "../front/component/footer"
@@ -18,6 +19,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
       <body>

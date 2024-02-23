@@ -1,8 +1,16 @@
-.actor-pagination input {
+.actor-container {
+  --bs-gutter-x: 0.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+.actor-container .actor-pagination input {
   width: 50px;
 }
-
-.actorcard-wrap {
+.actor-container .actorcard-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -10,34 +18,27 @@
   padding: 20px;
   gap: 20px;
 }
-.actorcard-wrap .actorcard {
+.actor-container .actorcard-wrap .actorcard {
   color: #fff;
-  max-width: 450px;
-}
-.actorcard-wrap > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 8px;
+  width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(191, 191, 191, 0.4705882353) !important;
+  background-color: #0F0F0F !important;
+  border-radius: 1rem;
 }
-.actorcard-wrap > div:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-.actorcard-wrap > div img {
+.actor-container .actorcard-wrap .actorcard img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
+  width: 300px;
 }
-.actorcard-wrap > div p {
+.actor-container .actorcard-wrap .actorcard:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.actor-container .actorcard-wrap .actorcard p {
   margin: 5px 0;
 }
-.actorcard-wrap button {
+.actor-container .actorcard-wrap button {
   padding: 10px 20px;
   margin: 0 5px;
   background-color: #007bff;
@@ -46,23 +47,22 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.actorcard-wrap button:disabled, .actorcard-wrap button.disabled {
+.actor-container .actorcard-wrap button:disabled, .actor-container .actorcard-wrap button.disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-.actorcard-wrap input[type=number] {
+.actor-container .actorcard-wrap input[type=number] {
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 @media (max-width: 442px) {
-  .actorcard-wrap {
+  .actor-container .actorcard-wrap {
     flex-direction: column;
     align-items: center;
   }
-  .actorcard-wrap > div {
+  .actor-container .actorcard-wrap .actorcard-container {
     max-width: 90%;
   }
 }

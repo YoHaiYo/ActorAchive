@@ -8,11 +8,11 @@ const thisYear = new Date().getFullYear(); // 2023 (올해년도 출력)
 export default function Footer() {
 
   return (
-    <footer className='text-center'>
-      <p>©Copyright {thisYear} | All rights reserved.</p>
-      <p>developer : SimSeHoon</p>
-      <p>github : https://github.com/YoHaiYo</p>
-      <p>email : 12si47bun@naver.com</p>
+    <footer className='text-center py-3'>
+      <p className='my-1'>©Copyright {thisYear} | All rights reserved.</p>
+      <p className='my-1'>developer : SimSeHoon</p>
+      <p className='my-1'>github : https://github.com/YoHaiYo</p>
+      <p className='my-1'>email : 12si47bun@naver.com</p>
     </footer>
   )
 }

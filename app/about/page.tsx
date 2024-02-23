@@ -3,40 +3,20 @@ export const metadata = {
   title: "About"
 }
 
+import InfoCard from "../../front/component/infoCard"
 import "./style/style.css"
 
 export default function Page() {
-  return <div id="about" className="div">
-    <div className="div-14">About</div>
-    <div className="div-15">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor
-    </div>
-    <div className="div-16">
-      <div className="div-17">Overview</div>
-      <div className="div-18">
-        <div className="div-19">This project is a personal project and ....</div>
-        <div className="div-20">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor
-        </div>
-      </div>
-    </div>
-    <div className="div-21"></div>
-    <div className="div-22">
-      <div className="div-23">Github</div>
-      <div className="div-24">https://github.com/YoHaiYo</div>
-    </div>
-    <div className="div-25"></div>
-  </div>
+  return <section className="page-about">
+    <h2 className="text-center text-white mb-5">About Actor Achive</h2>
+    <InfoCard index={"Overview"}
+      title={"This project is a personal project and ...."}
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+    />
+    <InfoCard index={"Github"}
+      title={"https://github.com/YoHaiYo"}
+      desc=""
+    />
 
+  </section>
 }

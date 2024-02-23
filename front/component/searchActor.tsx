@@ -34,7 +34,7 @@ export default function SearchActor() {
         type="text"
         value={search}
         onChange={handleInputChange}
-        placeholder="배우 이름 검색"
+        placeholder="Search Actors"
         onKeyPress={handleKeyPress} // 엔터 키 입력 감지를 위한 이벤트 핸들러 추가
         style={{
           backgroundColor: "transparent",

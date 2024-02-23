@@ -58,22 +58,20 @@ export default function ActorsCard() {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <section>
+    <section className='actor-container'>
       <ActorPagination />
 
       <div className='actorcard-wrap'>
         {data.results.map((el, idx) => (
-          <Link prefetch href={`/actor/${el.id}`} key={idx}>
-            <div>
-              {/* <p>{el.name}</p> */}
-              {/* <p><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></p> */}
-              <ActorsCast
-                actor_id={el.id}
-                actor_name={el.name}
-                actor_popularity={el.popularity}
-              />
-            </div>
-          </Link>
+          <div className='actorcard-container' key={idx}>
+            {/* <p>{el.name}</p> */}
+            {/* <p><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></p> */}
+            <ActorsCast
+              actor_id={el.id}
+              actor_name={el.name}
+              actor_popularity={el.popularity}
+            />
+          </div>
         ))}
       </div>
       <ActorPagination />

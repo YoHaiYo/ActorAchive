@@ -1,0 +1,54 @@
+.infocard-container {
+  display: flex;
+  justify-content: center;
+}
+
+.infocard-width {
+  display: flex;
+  width: 50%;
+}
+
+@media (max-width: 992px) {
+  .infocard-width {
+    width: 100%;
+  }
+
+}
+
+.infocard-index {
+  border-radius: 8px;
+  border: 1px solid var(--Black-15, #262626);
+  background-color: var(--Black-12, #1f1f1f);
+  align-self: start;
+  /* aspect-ratio: 0.93; */
+  justify-content: center;
+  color: var(--Absolute-White, #fff);
+  white-space: nowrap;
+  padding: 16px;
+  font: 600 16px Manrope, sans-serif;
+}
+
+.infocard-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 150%;
+  padding: 0 20px;
+}
+
+.infocard-title {
+  color: var(--Absolute-White, #fff);
+  font: 500 20px Manrope, sans-serif;
+}
+
+.infocard-description {
+  color: var(--Grey-60, #999);
+  margin-top: 14px;
+  font: 400 16px Manrope, sans-serif;
+}
+
+.infocard-divider {
+  margin: 1rem;
+  background: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 50%, rgba(229, 0, 0, 0) 100%);
+  max-width: 100%;
+  height: 1px;
+}

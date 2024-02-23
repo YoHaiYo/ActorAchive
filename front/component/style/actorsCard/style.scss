@@ -1,85 +1,90 @@
-.actor-pagination {
-  .btn-active {}
+.actor-container {
+  --bs-gutter-x: 0.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
 
-  .btn-noactive {}
 
-  input {
-    width: 50px;
-  }
-}
+  .actor-pagination {
+    .btn-active {}
 
-.actorcard-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 auto;
-  padding: 20px;
-  gap: 20px;
+    .btn-noactive {}
 
-  .actorcard {
-    color: #fff;
-    max-width: 450px;
+    input {
+      width: 50px;
+    }
   }
 
-
-  &>div {
+  .actorcard-wrap {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 300px; // 이미지 너비와 일치
-    margin-bottom: 20px;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
 
-    &:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+    .actorcard {
+      color: #fff;
+      width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #bfbfbf78 !important;
+      background-color: #0F0F0F !important;
+      border-radius: 1rem;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        width: 300px;
+      }
+
+      &:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+
+      p {
+        margin: 5px 0;
+      }
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
+    button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:disabled,
+      &.disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
       border-radius: 4px;
     }
+  }
 
-    p {
-      margin: 5px 0;
+  @media (max-width: 442px) {
+    .actorcard-wrap {
+      flex-direction: column;
+      align-items: center;
+
+      .actorcard-container {
+        max-width: 90%;
+      }
     }
   }
 
-  button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-
-    &:disabled,
-    &.disabled {
-      background-color: #cccccc;
-      cursor: not-allowed;
-    }
-  }
-
-  input[type="number"] {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-}
-
-@media (max-width: 442px) {
-  .actorcard-wrap {
-    flex-direction: column;
-    align-items: center;
-
-    &>div {
-      max-width: 90%;
-    }
-  }
 }

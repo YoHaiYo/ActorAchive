@@ -1,6 +1,33 @@
 #home {
+  /* position: absolute;
+  left: 0;
+  top: 0;
+  right: 0; */
+}
+
+.home-bg {
   background-image: url("../../../front/img/home-bg-1.jpg");
   background-size: cover;
   height: 100vh;
   text-align: center;
 }
+
+.home-shadow {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) !important; */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5)) !important;
+}
+
+.home-header-bg {
+  background-color: black;
+  width: 100vw;
+  height: 137px;
+  position: absolute;
+  top: 0;
+}
+
+/* .layout-home {
+  background-color: #020202 !important;
+} */
