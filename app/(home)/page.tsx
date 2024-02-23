@@ -20,7 +20,7 @@ export default function Page() {
     <div className="home-header-bg"></div>
     <div className="home-shadow"></div>
     <div className="home-bg">
-      <div className="position-absolute top-50 end-0 start-0">
+      <div className="position-absolute top-60 end-0 start-0 text-white">
         <p className="h2" >Who is Best Actor?</p >
         <br />
         <p>"Discover the stars who truly shine.</p>

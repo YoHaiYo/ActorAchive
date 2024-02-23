@@ -23,9 +23,36 @@
   }
   #hd .navi {
     transition: 0.5s;
-    transform: translateX(100%);
+    height: 0;
+    overflow: hidden;
   }
   #hd .active {
-    transform: translateX(0%);
+    height: calc(50vh - 40px);
   }
+}
+.mobile-view {
+  font-size: 2rem;
+  background-color: #1F1F1F;
+}
+.mobile-view .hamburger-btn {
+  font-size: 4.5rem;
+}
+.mobile-view #gnb li a {
+  color: white !important;
+  display: block;
+  width: auto;
+}
+.mobile-view #gnb li .gnb-divider {
+  margin: 1rem;
+  background: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 50%, rgba(229, 0, 0, 0) 100%);
+  max-width: 100%;
+  height: 1px;
+}
+.mobile-view .search-actor {
+  margin-top: 1rem !important;
+}
+.mobile-view .search-actor input {
+  font-size: 1.5rem !important;
+  padding: 0.5rem !important;
+  width: 80vw !important;
 }

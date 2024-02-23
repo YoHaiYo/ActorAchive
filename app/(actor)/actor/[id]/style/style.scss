@@ -1,0 +1,25 @@
+:root {
+  --img-width: 300px
+}
+
+.actor-detail {
+  .actor-info {
+    border: 1px solid white;
+    width: auto;
+  }
+
+  .actor-detail-movie {
+    padding: 1rem;
+
+
+    img {
+      // 원본비율 100 : 52 
+      // height: 0;
+      // width: 100%;
+      // padding-top: 52%;
+
+      width: var(--img-width);
+      height: calc(var(--img-width) * 0.52);
+    }
+  }
+}

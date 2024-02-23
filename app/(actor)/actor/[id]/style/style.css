@@ -1,0 +1,15 @@
+:root {
+  --img-width: 300px ;
+}
+
+.actor-detail .actor-info {
+  border: 1px solid white;
+  width: auto;
+}
+.actor-detail .actor-detail-movie {
+  padding: 1rem;
+}
+.actor-detail .actor-detail-movie img {
+  width: var(--img-width);
+  height: calc(var(--img-width) * 0.52);
+}

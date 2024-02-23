@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import SearchActor from "./searchActor";
 import "./style/navigation/navigation.min.css"
 import React, { useEffect, useState } from 'react'
+import { List } from "react-bootstrap-icons";
 
 export default function Navigation() {
   const [toggle, setToggle] = useState(false)
@@ -34,14 +35,29 @@ export default function Navigation() {
       </nav>
       {/* mobile-view */}
       <nav className={`mobile-view fixed-top py-4 d-flex justify-content-center border-bottom`}>
-        <h1 className="w-0 z-up"><a href="/">LogoMobile</a></h1>
-        <div className="d-flex justify-content-end"><button onClick={() => setToggle(!toggle)}>햄버거바</button></div>
+        <div className="d-flex justify-content-between align-items-center mx-3">
+          <h1 className="z-up"><a href="/">LogoMobile</a></h1>
+          {/* <button onClick={() => setToggle(!toggle)}>햄버거바</button> */}
+          <List onClick={() => setToggle(!toggle)} className="cursur-pointer hamburger-btn"></List>
+        </div>
         <div className={`${toggle ? "active" : ""} navi position-relative text-end`}>
           <ul id="gnb" className="text-center">
-            <li className="mx-3"><a href="/">Home</a>{path === "/" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/actor">Actor</a>{path === "/actor" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/criteria">Criteria</a>{path === "/criteria" ? "★" : ""}</li>
-            <li className="mx-3"><a href="/about">About</a>{path === "/about" ? "★" : ""}</li>
+            <li className={`m-3 `}>
+              <a href="/">Home</a>
+              <div className="gnb-divider"></div>
+            </li>
+            <li className={`m-3 `}>
+              <a href="/actor">Actor</a>
+              <div className="gnb-divider"></div>
+            </li>
+            <li className={`m-3 `}>
+              <a href="/criteria">Criteria</a>
+              <div className="gnb-divider"></div>
+            </li>
+            <li className={`m-3 `}>
+              <a href="/about">About</a>
+              <div className="gnb-divider"></div>
+            </li>
           </ul>
           <div className="d-flex justify-content-center">
             <SearchActor />

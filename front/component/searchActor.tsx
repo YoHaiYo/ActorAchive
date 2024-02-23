@@ -25,7 +25,7 @@ export default function SearchActor() {
 
   return (
     <div
-      className='d-flex align-items-center py-1 px-2'
+      className='search-actor d-flex align-items-center py-1 px-2'
       style={{
         backgroundColor: 'transparent',
         border: "1px solid #BFBFBF"
@@ -40,7 +40,8 @@ export default function SearchActor() {
           backgroundColor: "transparent",
           width: "180px",
           border: "none",
-          padding: "0 .5rem"
+          padding: "0 .5rem",
+          color: "white"
         }}
       />
       <Search onClick={handleSearch} style={{ cursor: "pointer" }} />

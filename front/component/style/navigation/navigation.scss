@@ -37,11 +37,53 @@
 
     .navi {
       transition: .5s;
-      transform: translateX(100%);
+      // transform: translateY(0%);
+      height: 0;
+      overflow: hidden;
     }
 
     .active {
-      transform: translateX(0%);
+      // transform: translateY(100%);
+      height: calc(50vh - 40px);
     }
   }
+}
+
+// mobile-view
+.mobile-view {
+  .hamburger-btn {
+    font-size: 4.5rem;
+  }
+
+  font-size: 2rem;
+  background-color: #1F1F1F;
+
+  #gnb {
+    li {
+      a {
+        color: white !important;
+        display: block;
+        width: auto;
+      }
+
+      .gnb-divider {
+        margin: 1rem;
+        background: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 50%, rgba(229, 0, 0, 0) 100%);
+        max-width: 100%;
+        height: 1px;
+      }
+    }
+  }
+
+  .search-actor {
+    margin-top: 1rem !important;
+
+    input {
+      font-size: 1.5rem !important;
+      padding: .5rem !important;
+      width: 80vw !important;
+    }
+  }
+
+
 }
