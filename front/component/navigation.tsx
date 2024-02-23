@@ -20,7 +20,12 @@ export default function Navigation() {
       {/* pc-view */}
       <nav className="pc-view fixed-top py-4 container container-fluidxxx
       d-flex justify-content-between align-items-center">
-        <h1 className="w-0 z-up"><a href="/">LogoPC</a></h1>
+        <h1 className="w-0 z-up">
+          <a href="/">
+            {/* LOGO */}
+            <img src="/img/actorachive-logo.png" alt="logo" style={{ width: 200 }} />
+          </a>
+        </h1>
         <div className="navi navi-ani-off d-flex justify-content-between">
           <ul id="gnb" className="d-flex justify-content-center align-items-center rounded-4 p-3">
             <li className={`mx-3 ${path === "/" ? "nav-active" : ""}`}><a href="/">Home</a></li>
@@ -36,7 +41,9 @@ export default function Navigation() {
       {/* mobile-view */}
       <nav className={`mobile-view fixed-top py-4 d-flex justify-content-center border-bottom`}>
         <div className="d-flex justify-content-between align-items-center mx-3">
-          <h1 className="z-up"><a href="/">LogoMobile</a></h1>
+          <h1 className="z-up"><a href="/">
+            <img src="/img/actorachive-logo.png" alt="logo" style={{ width: 200 }} />
+          </a></h1>
           {/* <button onClick={() => setToggle(!toggle)}>햄버거바</button> */}
           <List onClick={() => setToggle(!toggle)} className="cursur-pointer hamburger-btn"></List>
         </div>

@@ -6,7 +6,7 @@
 }
 
 .home-bg {
-  background-image: url("../../../front/img/home-bg-1.jpg");
+  background-image: url("/img/home-bg-1.jpg");
   background-size: cover;
   height: 100vh;
   text-align: center;
