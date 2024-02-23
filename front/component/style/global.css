@@ -34,6 +34,10 @@ a {
   z-index: 999;
 }
 
+.cursur-pointer {
+  cursor: pointer;
+}
+
 /* main color */
 :root {
   --actor-red: #E50000;

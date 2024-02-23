@@ -40,8 +40,14 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
   const average_vote_average: number = Number((total_vote_average / movieNum).toFixed(2)) // 4 : 출현영화 전체 평균평점
   const actor_individual_popularity: number = Number(actor_popularity.toFixed(0));// 5 
 
-  // 종합지표 (계수 관리하기)
-  const total_rating: number = Number((total_popularity + total_vote_count + movieNum + average_vote_average + actor_individual_popularity).toFixed(2))
+  // ★종합지표 (계수 관리하기)
+  const total_rating: number = Number((
+    average_vote_average * 100
+    + total_vote_count * 0.01
+    + actor_individual_popularity * 1
+    + movieNum * 5
+    + total_popularity * 0.01
+  ).toFixed(0))
 
   return (
 
@@ -49,12 +55,13 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
       {/* <li>{actor_id}</li> */}
       <Link prefetch href={`/actor/${actor_id}`} >
         <div className='m-3'>
-          <div className='d-flex justify-content-between align-items-center px-3'>
-            <p className='p-3 h2 my-0'>{actor_name}</p>
+          <div className='d-flex justify-content-between align-items-center px-2'>
+            <p className='p-2 h3 my-0'>{actor_name}</p>
             <p className='maincolor maincolor-border my-0 h4 px-2 py-1 rounded-5'>{total_rating}</p>
           </div>
           <div className='d-flex justify-content-center'>
-            <p>{actorDetails.place_of_birth} </p>
+            {/* 태어난 곳 주소 축소 */}
+            <p>{actorDetails?.place_of_birth ? actorDetails.place_of_birth.split(', ').slice(1).join(', ') : 'Unknown'} </p>
             <p className='mx-1'>|</p>
             <p>{actorDetails.birthday}</p>
           </div>
@@ -65,7 +72,7 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
         </div>
       </Link>
 
-      <div className='d-flex justify-content-between p-3'>
+      <div className='d-flex justify-content-between p-4'>
         <div>
           <StarFill className='me-2' />
           <span>Rating : </span>
@@ -77,7 +84,7 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
           <span className='maincolor'>{total_vote_count}</span>
         </div>
       </div>
-      <div className='d-flex justify-content-between px-3'>
+      <div className='d-flex justify-content-between px-4'>
         <div>
           <ChatRightHeart className='me-2' />
           <span>Personal popularity : </span>
@@ -89,14 +96,14 @@ export default function ActorsCast({ actor_id, actor_name, actor_popularity }) {
           <span className='maincolor'> {movieNum}</span>
         </div>
       </div>
-      <div className='d-flex justify-content-between p-3'>
+      <div className='d-flex justify-content-between p-4'>
         <div>
           <HeartFill className='me-2' />
           <span>Total Popularity : </span>
           <span className='maincolor'>{total_popularity}</span>
         </div>
         <div>
-          <QuestionCircle />
+          <a href="/criteria"><QuestionCircle className='h5 cursur-pointer' /></a>
         </div>
       </div>
     </div>

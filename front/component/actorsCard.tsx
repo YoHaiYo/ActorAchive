@@ -5,6 +5,8 @@ import { Popular_Actor_API, Poster_API } from '../apiurl/apiurl';
 import Link from 'next/link';
 import ActorsCast from './actorsCast';
 import './style/actorsCard/style.min.css'
+import { Shuffle, Arrow90degDown, ArrowLeftCircleFill, ArrowLeftSquareFill, ArrowRightCircleFill, ArrowRightSquare, ArrowRightSquareFill } from 'react-bootstrap-icons';
+import { CardSubtitle } from 'react-bootstrap';
 
 
 
@@ -13,19 +15,48 @@ export default function ActorsCard() {
   const [page, setPage] = useState(1);
   const [inputPage, setInputPage] = useState(1); // 사용자 입력 페이지 번호를 위한 state 추가
 
+  // 랜덤 페이지로 이동하는 함수
+  const goToRandomPage = () => {
+    // 1과 500 사이의 랜덤 정수를 생성합니다.
+    const randomPage = Math.floor(Math.random() * 500) + 1;
+    setPage(randomPage);
+  };
+
+  const handlePageInput = (e) => {
+    if (e.key === 'Enter') {
+      const newPage = Number(e.target.value);
+      if (!isNaN(newPage) && newPage > 0 && newPage <= 500) {
+        setPage(newPage);
+      }
+    }
+  };
+
   // pagePagination UI 관리
   function ActorPagination() {
     return (
-      <div className='actor-pagination d-flex justify-content-center'>
-        {page > 1 ? <button className='btn-active maincolor-bg' onClick={goToPreviousPage}>Before</button> : <button className='btn-noactive' >X-Before</button>}
+      <div className='actor-pagination d-flex justify-content-center align-items-center'>
+        {page > 1 ? (
+          <ArrowLeftSquareFill className='actor-pagination-btn btn-active maincolor' onClick={goToPreviousPage} />
+        ) : (
+          <ArrowLeftSquareFill className='actor-pagination-btn' />
+        )}
+
         <input
           type="number"
-          value={page}
-          onChange={handleInputChange}
+          defaultValue={page}
+          onKeyPress={handlePageInput}
+          className='actor-pagination-input'
         />
-        {page < 500 ? <button className='btn-active maincolor-bg' onClick={goToNextPage}>Next</button> : <button className='btn-noactive' >X-Next</button>}
+
+        <Shuffle className='actor-pagination-btn maincolor-bg actor-shuffle-btn' onClick={goToRandomPage}></Shuffle>
+        {page < 500 ? (
+          <ArrowRightSquareFill className='ms-0 actor-pagination-btn btn-active maincolor' onClick={goToNextPage} />
+        ) : (
+          <ArrowRightSquareFill className='ms-0 actor-pagination-btn' />
+        )}
+
       </div>
-    )
+    );
   }
 
   useEffect(() => {
