@@ -11,7 +11,7 @@ interface IPrams {
   params: { id: string }
 }
 
-export function ratingToStars(voteAverage) {
+function ratingToStars(voteAverage) {
   // 평점을 2로 나누어 0에서 5 사이의 값으로 조정
   const starsFull = Math.round(voteAverage / 2);
   const starsEmpty = 5 - starsFull; // 빈 별의 개수
