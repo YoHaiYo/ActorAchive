@@ -20,16 +20,14 @@ export default function Page() {
     <div className="home-header-bg"></div>
     <div className="home-shadow"></div>
     <div className="home-bg">
-      <div className="position-absolute top-60 end-0 start-0 text-white">
-        <p className="h2" >Who is Best Actor?</p >
+      <div className="position-absolute home-bg-positon end-0 start-0 text-white">
+        <p className="h1" >Who is Best Actor?</p >
         <br />
-        <p>"Discover the stars who truly shine.</p>
+        <p className="h3">Discover the best in cinema with our unique actor scoring system! </p>
         <br />
-        <p>welcome to the only platform where the greatest actors are celebrated, not just through popularity, but by genuine merit.</p>
+        <p className="h3">Explore over 10,000 profiles to see who tops the charts in cinematic excellence. </p>
         <br />
-        <p>With our unique, data-driven approach, we redefine excellence in cinema, spotlighting the talents that set the bar.</p>
-        <br />
-        <p>Join us in celebrating the artistry that transcends the screen, where every accolade is earned, and every star truly deserves their place in the spotlight."</p>
+        <p className="h3">Dive in now and find out who reigns supreme in the world of movies!</p>
 
         <button className="mt-5 btn maincolor-bg text-white">Show Right now</button>
       </div>

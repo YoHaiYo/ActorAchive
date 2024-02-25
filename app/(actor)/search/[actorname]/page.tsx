@@ -1,4 +1,5 @@
 import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Poster_API, Search_Actor_API } from "../../../../front/apiurl/apiurl";
+import ActorsCard from "../../../../front/component/actorsCard";
 import ActorsCast from "../../../../front/component/actorsCard";
 import "./style/style.css"
 export const metadata = {
@@ -36,12 +37,14 @@ export default async function Page(
         return (
           <div key={idx}>
             <div className="d-md-flex">
+              {/* 배우정보 */}
               <div>
                 <div className="actor-info-content">
                   <div><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} /></div>
                   <p className="actor-info-name text-center">{el.name}</p>
                 </div>
               </div>
+              {/* 참여작품들 */}
               <div>
                 <h3 className="text-center text-white my-3">Filmography</h3>
                 <div className="d-flex flex-wrap justify-content-center">

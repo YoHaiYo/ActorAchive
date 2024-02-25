@@ -56,6 +56,16 @@
         border-radius: 4px;
         width: 300px;
       }
+      .noimg {
+        width: 300px;
+        height: 450px;
+        display: inline-block;
+        background-image: url("/img/actorplacehold.png");
+        background-position: center;
+        background-size: cover;
+        opacity: .5;
+        color: #fff;
+      }
 
 
       &:hover {
@@ -113,7 +123,7 @@
   .actorcard {
     width: 100% !important;
 
-    img {
+    img, .noimg {
       width: 90% !important;
 
     }

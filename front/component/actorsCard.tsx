@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Popular_Actor_API, Poster_API } from '../apiurl/apiurl';
 import { Film, Receipt, StarFill, ChatRightHeart, HeartFill, QuestionCircle } from 'react-bootstrap-icons';
 import Link from 'next/link';
+import ActorsLoading from './actorsLoading';
 
 export default function ActorsCard({ actor_id, actor_name, actor_popularity }) {
   const [data, setData] = useState(null);
@@ -21,7 +22,10 @@ export default function ActorsCard({ actor_id, actor_name, actor_popularity }) {
     }).catch(error => console.error("Fetching data failed", error));
   }, [actor_id]);
 
-  if (!data) return <div>Loading...</div>;
+  /// 데이터 들어오기전 로딩이미지
+  if (!data) return (
+    <ActorsLoading actor_name={actor_name} actor_id={actor_id} />
+  );
   // console.log(data)
 
 
@@ -67,8 +71,8 @@ export default function ActorsCard({ actor_id, actor_name, actor_popularity }) {
           </div>
         </div>
 
-        <div className='text-center'>
-          <img src={`${Poster_API}/${actorDetails.profile_path}`} alt={actorDetails.name} />
+        <div className={`text-center`}>
+          <img className={`${actorDetails.profile_path === null ? "noimg" : ''}`} src={`${Poster_API}/${actorDetails.profile_path}`} alt={actorDetails.name} />
         </div>
       </a>
 

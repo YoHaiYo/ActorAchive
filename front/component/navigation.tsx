@@ -23,7 +23,7 @@ export default function Navigation() {
         <h1 className="w-0 z-up">
           <a href="/">
             {/* LOGO */}
-            <img src="/img/actorachive-logo.png" alt="logo" style={{ width: 200 }} />
+            <img src="/img/logo-1.png" alt="logo" />
           </a>
         </h1>
         <div className="navi navi-ani-off d-flex justify-content-between">
@@ -42,7 +42,7 @@ export default function Navigation() {
       <nav className={`mobile-view fixed-top`}>
         <div className="d-flex justify-content-between align-items-center mx-3">
           <h1 className="z-up"><a href="/">
-            <img src="/img/actorachive-logo.png" alt="logo" style={{ width: 200 }} />
+            <img src="/img/logo-1.png" alt="logo" height={35} />
           </a></h1>
           {/* <button onClick={() => setToggle(!toggle)}>햄버거바</button> */}
           <List onClick={() => setToggle(!toggle)} className="cursur-pointer hamburger-btn"></List>

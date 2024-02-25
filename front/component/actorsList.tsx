@@ -86,7 +86,7 @@ export default function ActorsList() {
     }
   };
 
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <></>;
 
   return (
     <section className='actor-container'>

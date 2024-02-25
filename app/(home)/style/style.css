@@ -31,6 +31,25 @@
 /* .layout-home {
   background-color: #020202 !important;
 } */
-.top-60 {
+.home-bg-positon {
   top: 60%;
+}
+
+@media (max-width: 992px) {
+  .home-bg {
+    background-image: url("/img/home-mobile-bg-1.png");
+    height: 90vh;
+  }
+  .home-bg-positon {
+    top: 30%;
+  }
+}
+@media (max-width: 500px) {
+  .home-bg {
+    background-image: url("/img/home-mobile-bg-1.png");
+    height: 50vh;
+  }
+  .home-bg-positon {
+    top: 10%;
+  }
 }

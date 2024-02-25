@@ -8,10 +8,11 @@ import '../front/component/style/global.css'
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ActorAchive",
-    default: "ActorAchive",
+    template: "%s | ActorArchive",
+    default: "ActorArchive",
   },
-  description: 'ActorAchive',
+  description: 'Uncover the best in cinema with our exclusive actor rankings. Dive into profiles of over 10,000 actors and see who leads in cinematic excellence.',
+  keywords: "actor rankings, best actors, movie ratings, cinema excellence, top movie stars, film industry, actor scores",
 }
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/actorachive-favicon.ico" />
       </head>
       <body>
         <Navigation />
