@@ -3,6 +3,7 @@ export const metadata = {
   title: "About"
 }
 
+import { BoxArrowInUpRight } from "react-bootstrap-icons"
 import InfoCard from "../../front/component/infoCard"
 import "./style/style.css"
 
@@ -38,7 +39,8 @@ export default function Page() {
               Please refer to GitHub address below
             </div>
             <div className="infocard-description">
-              <a href="">https://github.com/YoHaiYo</a>
+
+              <a href="https://github.com/YoHaiYo/ActorArchive"><BoxArrowInUpRight className="mx-1" />https://github.com/YoHaiYo/ActorArchive</a>
             </div>
           </div>
         </div>

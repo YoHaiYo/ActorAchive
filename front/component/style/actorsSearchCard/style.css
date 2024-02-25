@@ -1,0 +1,42 @@
+.actorcard {
+  color: #fff;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(191, 191, 191, 0.4705882353) !important;
+  background-color: #0F0F0F !important;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.actorcard img {
+  height: auto;
+  border-radius: 4px;
+  width: 300px !important;
+}
+.actorcard .actor-img {
+  width: 300px !important;
+}
+.actorcard .noimg {
+  width: 300px;
+  height: 450px;
+  display: inline-block;
+  background-image: url("/img/actorplacehold.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  color: #fff;
+}
+.actorcard:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.actorcard p {
+  margin: 5px 0;
+}
+
+@media (max-width: 500px) {
+  .actorcard {
+    width: 100% !important;
+  }
+  .actorcard img, .actorcard .noimg {
+    width: 90% !important;
+  }
+}
