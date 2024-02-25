@@ -29,7 +29,7 @@ export default function Page() {
         <br />
         <p className="h3">Dive in now and find out who reigns supreme in the world of movies!</p>
 
-        <button className="mt-5 btn maincolor-bg text-white">Show Right now</button>
+        <button className="mt-5 btn maincolor-bg text-white"><a href="/actor" className="text-white">Show Right now</a></button>
       </div>
     </div>
   </div>
