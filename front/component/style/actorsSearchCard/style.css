@@ -40,6 +40,11 @@
     width: 90% !important;
   }
 }
+@media (min-width: 852px) {
+  .actorsearch-page {
+    display: flex;
+  }
+}
 .actor-detail-moviecard {
   padding: 1rem;
   margin: 0.5rem;

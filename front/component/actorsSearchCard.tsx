@@ -67,8 +67,8 @@ export default async function ActorsSearchCard({ actor_id, actor_name, actor_pop
 
   return (
 
-    <div className='d-flex'>
-      <div>
+    <div className='actorsearch-page'>
+      <div className='d-flex d-md-block justify-content-center'>
         <div className='actorcard'>
           {/* <li>{actor_id}</li> */}
           <a href={`/actor/${actor_id}`} >
@@ -127,6 +127,7 @@ export default async function ActorsSearchCard({ actor_id, actor_name, actor_pop
             </div>
           </div>
         </div>
+
       </div>
       {/* <h3 className="text-center text-white my-3">Filmography</h3> */}
       <div>
