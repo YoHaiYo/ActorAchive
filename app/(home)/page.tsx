@@ -28,7 +28,6 @@ export default function Page() {
         <p className="h3">Explore over 10,000 profiles to see who tops the charts in cinematic excellence. </p>
         <br />
         <p className="h3">Dive in now and find out who reigns supreme in the world of movies!</p>
-
         <button className="mt-5 btn maincolor-bg text-white"><a href="/actor" className="text-white">Show Right now</a></button>
       </div>
     </div>
