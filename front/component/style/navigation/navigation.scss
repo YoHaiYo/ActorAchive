@@ -20,6 +20,7 @@
 
   .mobile-view {
     display: none !important;
+
   }
 }
 
@@ -30,47 +31,63 @@
     }
 
     .mobile-view {
-      display: block !important;
-      // position: relative;
-      // left: 100%;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
     }
 
-    .navi {
-      transition: .5s;
-      // transform: translateY(0%);
-      height: 0;
-      overflow: hidden;
+    /// 햄버거 클릭시 애니메이션
+    .navi {      
+      position: absolute;
+      // 우->좌
+      top: 100%;
+      left: 100%;
+      transition: .4s ease-in-out;
+      // 상->하
+      // transition: .5s;
+      // bottom: 100%;
     }
 
-    .active {
-      // transform: translateY(100%);
-      height: calc(50vh - 40px);
+    .navi.active {
+      // 우->좌
+      left: 50%;
+      transform: translateX(-50%);
+      // 상->하
+      // transform: translateY(calc(60px + 100%));
     }
   }
 }
 
 // mobile-view
 .mobile-view {
-  .hamburger-btn {
-    font-size: 4.5rem;
-  }
-
-  font-size: 2rem;
+  height: 60px;
+  font-size: 1.5rem;
   background-color: #1F1F1F;
 
-  #gnb {
-    li {
-      a {
-        color: white !important;
-        display: block;
-        width: auto;
-      }
+  .hamburger-btn {
+    font-size: 2.5rem;
+    position: absolute;
+    right: .5rem;
+  }
 
-      .gnb-divider {
-        margin: 1rem;
-        background: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 50%, rgba(229, 0, 0, 0) 100%);
-        max-width: 100%;
-        height: 1px;
+
+  .navi {
+    background-color: #1F1F1F;
+    padding-bottom: 1.5rem;
+    #gnb {
+      li {
+        a {
+          color: white !important;
+          display: block;
+          width: 100vw;
+        }
+  
+        .gnb-divider {
+          margin: 1rem;
+          background: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 50%, rgba(229, 0, 0, 0) 100%);
+          max-width: 100%;
+          height: 1px;
+        }
       }
     }
   }

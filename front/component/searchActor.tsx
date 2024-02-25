@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Next.js 라우팅을 위해 useRouter 훅 추가
 import { Search } from 'react-bootstrap-icons';
+import "./style/seachActor/style.css"
 
 
 export default function SearchActor() {
@@ -13,7 +14,8 @@ export default function SearchActor() {
   };
 
   const handleSearch = () => {
-    router.push(`/search/${search}`); // 버튼 클릭 시, 입력된 search 값으로 라우팅
+    // router.push(`/search/${search}`); // 버튼 클릭 시, 입력된 search 값으로 라우팅
+    window.location.href = `/search/${search}`;
   };
 
   // 엔터 키를 누를 때 검색 실행
@@ -24,27 +26,16 @@ export default function SearchActor() {
   };
 
   return (
-    <div
-      className='search-actor d-flex align-items-center py-1 px-2'
-      style={{
-        backgroundColor: 'transparent',
-        border: "1px solid #BFBFBF"
-      }}>
+    <div className='search-actor d-flex align-items-center py-1 px-2'>
       <input
         type="text"
         value={search}
         onChange={handleInputChange}
         placeholder="Search Actors"
         onKeyPress={handleKeyPress} // 엔터 키 입력 감지를 위한 이벤트 핸들러 추가
-        style={{
-          backgroundColor: "transparent",
-          width: "180px",
-          border: "none",
-          padding: "0 .5rem",
-          color: "white"
-        }}
+
       />
-      <Search onClick={handleSearch} style={{ cursor: "pointer" }} />
+      <Search onClick={handleSearch} className='cursor-pointer' />
       {/* <button style={{ backgroundColor: "transparent" }}></button>  */}
     </div>
   );

@@ -1,112 +1,111 @@
-"use client"
-
-import React, { useState, useEffect, Suspense } from 'react'
-import { Popular_Actor_API, Poster_API } from '../apiurl/apiurl';
+import React, { useEffect, useState } from 'react'
+import { Actor_Cast_API_1, Actor_Cast_API_2, Actor_Detail_API_1, Actor_Detail_API_2, Popular_Actor_API, Poster_API } from '../apiurl/apiurl';
+import { Film, Receipt, StarFill, ChatRightHeart, HeartFill, QuestionCircle } from 'react-bootstrap-icons';
 import Link from 'next/link';
-import ActorsCast from './actorsCast';
-import './style/actorsCard/style.min.css'
-import { Shuffle, Arrow90degDown, ArrowLeftCircleFill, ArrowLeftSquareFill, ArrowRightCircleFill, ArrowRightSquare, ArrowRightSquareFill } from 'react-bootstrap-icons';
-import { CardSubtitle } from 'react-bootstrap';
 
-
-
-export default function ActorsCard() {
+export default function ActorsCard({ actor_id, actor_name, actor_popularity }) {
   const [data, setData] = useState(null);
-  const [page, setPage] = useState(1);
-  const [inputPage, setInputPage] = useState(1); // 사용자 입력 페이지 번호를 위한 state 추가
+  const [actorDetails, setActorDetails] = useState(null);
 
-  // 랜덤 페이지로 이동하는 함수
-  const goToRandomPage = () => {
-    // 1과 500 사이의 랜덤 정수를 생성합니다.
-    const randomPage = Math.floor(Math.random() * 500) + 1;
-    setPage(randomPage);
-  };
-
-  const handlePageInput = (e) => {
-    if (e.key === 'Enter') {
-      const newPage = Number(e.target.value);
-      if (!isNaN(newPage) && newPage > 0 && newPage <= 500) {
-        setPage(newPage);
-      }
-    }
-  };
-
-  // pagePagination UI 관리
-  function ActorPagination() {
-    return (
-      <div className='actor-pagination d-flex justify-content-center align-items-center'>
-        {page > 1 ? (
-          <ArrowLeftSquareFill className='actor-pagination-btn btn-active maincolor' onClick={goToPreviousPage} />
-        ) : (
-          <ArrowLeftSquareFill className='actor-pagination-btn' />
-        )}
-
-        <input
-          type="number"
-          defaultValue={page}
-          onKeyPress={handlePageInput}
-          className='actor-pagination-input'
-        />
-
-        <Shuffle className='actor-pagination-btn maincolor-bg actor-shuffle-btn' onClick={goToRandomPage}></Shuffle>
-        {page < 500 ? (
-          <ArrowRightSquareFill className='ms-0 actor-pagination-btn btn-active maincolor' onClick={goToNextPage} />
-        ) : (
-          <ArrowRightSquareFill className='ms-0 actor-pagination-btn' />
-        )}
-
-      </div>
-    );
-  }
+  // Popular_Actor_API
+  const Actor_Cast_API = `${Actor_Cast_API_1}${actor_id}${Actor_Cast_API_2}`
+  const Actor_Detail_API = `${Actor_Detail_API_1}${actor_id}${Actor_Detail_API_2}`
 
   useEffect(() => {
-    const Popular_Actor_API_page = `${Popular_Actor_API}&page=${page}`;
-    fetch(Popular_Actor_API_page)
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error("Fetching data failed", error));
-    // console.log(page)
-  }, [page]);
-
-  const goToNextPage = () => {
-    setPage(prevPage => prevPage + 1);
-  };
-
-  const goToPreviousPage = () => {
-    setPage(prevPage => Math.max(1, prevPage - 1));
-  };
-
-  const handleInputChange = (e) => {
-    const newPage = Number(e.target.value);
-    setInputPage(e.target.value); // 입력값을 inputPage state에 저장
-
-    // 입력한 페이지 번호로 바로 이동
-    if (!isNaN(newPage) && newPage > 0) {
-      setPage(newPage);
-    }
-  };
+    Promise.all([
+      fetch(Actor_Cast_API).then(response => response.json()),
+      fetch(Actor_Detail_API).then(response => response.json())
+    ]).then(([data, actorDetails]) => {
+      setData(data);
+      setActorDetails(actorDetails);
+    }).catch(error => console.error("Fetching data failed", error));
+  }, [actor_id]);
 
   if (!data) return <div>Loading...</div>;
+  // console.log(data)
+
+
+  const calcTotal = (x) => {
+    const totalCast = data.cast.reduce((acc, el) => acc + el[x], 0);
+    const totalCrew = data.crew.reduce((acc, el) => acc + el[x], 0);
+    const total = totalCast + totalCrew
+    return total
+  }
+
+  // 배우 5대 지표
+  const total_popularity: number = Number(calcTotal("popularity").toFixed(0)) // 1
+  const total_vote_count: number = calcTotal("vote_count") // 2
+  const total_vote_average: number = calcTotal("vote_average")
+  const movieNum: number = data.cast.length + data.crew.length // 3
+  const average_vote_average: number = Number((total_vote_average / movieNum).toFixed(2)) // 4 : 출현영화 전체 평균평점
+  const actor_individual_popularity: number = Number(actor_popularity.toFixed(0));// 5 
+
+  // ★종합지표 (계수 관리하기)
+  const total_rating: number = Number((
+    average_vote_average * 100
+    + total_vote_count * 0.01
+    + actor_individual_popularity * 1
+    + movieNum * 5
+    + total_popularity * 0.01
+  ).toFixed(0))
 
   return (
-    <section className='actor-container'>
-      <ActorPagination />
 
-      <div className='actorcard-wrap'>
-        {data.results.map((el, idx) => (
-          <div className='actorcard-container' key={idx}>
-            {/* <p>{el.name}</p> */}
-            {/* <p><img src={`${Poster_API}/${el.profile_path}`} alt={el.name} style={{ width: 300 }} /></p> */}
-            <ActorsCast
-              actor_id={el.id}
-              actor_name={el.name}
-              actor_popularity={el.popularity}
-            />
+    <div className='actorcard'>
+      {/* <li>{actor_id}</li> */}
+      <a href={`/actor/${actor_id}`} >
+        <div className='m-3'>
+          <div className='d-flex justify-content-between align-items-center px-2'>
+            <p className='p-2 h3 my-0'>{actor_name}</p>
+            <p className='maincolor maincolor-border my-0 h4 px-2 py-1 rounded-5'>{total_rating}</p>
           </div>
-        ))}
-      </div>
-      <ActorPagination />
-    </section>
-  );
-}
+          <div className='d-flex justify-content-center'>
+            {/* 태어난 곳 주소 축소 */}
+            <p>{actorDetails?.place_of_birth ? actorDetails.place_of_birth.split(', ').slice(1).join(', ') : 'Unknown'} </p>
+            <p className='mx-1'>|</p>
+            <p>{actorDetails.birthday}</p>
+          </div>
+        </div>
 
+        <div className='text-center'>
+          <img src={`${Poster_API}/${actorDetails.profile_path}`} alt={actorDetails.name} />
+        </div>
+      </a>
+
+      <div className='d-flex justify-content-between p-4'>
+        <div>
+          <StarFill className='me-2' />
+          <span>Rating : </span>
+          <span className='maincolor'>{average_vote_average}</span>
+        </div>
+        <div>
+          <Receipt className='me-2' />
+          <span>Votes : </span>
+          <span className='maincolor'>{total_vote_count}</span>
+        </div>
+      </div>
+      <div className='d-flex justify-content-between px-4'>
+        <div>
+          <ChatRightHeart className='me-2' />
+          <span>Personal popularity : </span>
+          <span className='maincolor'>{actor_individual_popularity}</span>
+        </div>
+        <div>
+          <Film className='me-2' />
+          <span>Movies :</span>
+          <span className='maincolor'> {movieNum}</span>
+        </div>
+      </div>
+      <div className='d-flex justify-content-between p-4'>
+        <div>
+          <HeartFill className='me-2' />
+          <span>Total Popularity : </span>
+          <span className='maincolor'>{total_popularity}</span>
+        </div>
+        <div>
+          <a href="/criteria"><QuestionCircle className='h5 cursur-pointer' /></a>
+        </div>
+      </div>
+    </div>
+  )
+}

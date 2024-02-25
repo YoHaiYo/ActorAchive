@@ -39,7 +39,7 @@ export default function Navigation() {
         </div>
       </nav>
       {/* mobile-view */}
-      <nav className={`mobile-view fixed-top py-4 d-flex justify-content-center border-bottom`}>
+      <nav className={`mobile-view fixed-top`}>
         <div className="d-flex justify-content-between align-items-center mx-3">
           <h1 className="z-up"><a href="/">
             <img src="/img/actorachive-logo.png" alt="logo" style={{ width: 200 }} />
@@ -47,7 +47,7 @@ export default function Navigation() {
           {/* <button onClick={() => setToggle(!toggle)}>햄버거바</button> */}
           <List onClick={() => setToggle(!toggle)} className="cursur-pointer hamburger-btn"></List>
         </div>
-        <div className={`${toggle ? "active" : ""} navi position-relative text-end`}>
+        <div className={`${toggle ? "active" : ""} navi`}>
           <ul id="gnb" className="text-center">
             <li className={`m-3 `}>
               <a href="/">Home</a>

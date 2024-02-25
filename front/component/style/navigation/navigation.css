@@ -19,30 +19,41 @@
     display: none !important;
   }
   #hd .mobile-view {
-    display: block !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
   }
   #hd .navi {
-    transition: 0.5s;
-    height: 0;
-    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transition: 0.4s ease-in-out;
   }
-  #hd .active {
-    height: calc(50vh - 40px);
+  #hd .navi.active {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 .mobile-view {
-  font-size: 2rem;
+  height: 60px;
+  font-size: 1.5rem;
   background-color: #1F1F1F;
 }
 .mobile-view .hamburger-btn {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
+  position: absolute;
+  right: 0.5rem;
 }
-.mobile-view #gnb li a {
+.mobile-view .navi {
+  background-color: #1F1F1F;
+  padding-bottom: 1.5rem;
+}
+.mobile-view .navi #gnb li a {
   color: white !important;
   display: block;
-  width: auto;
+  width: 100vw;
 }
-.mobile-view #gnb li .gnb-divider {
+.mobile-view .navi #gnb li .gnb-divider {
   margin: 1rem;
   background: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, #e50000 50%, rgba(229, 0, 0, 0) 100%);
   max-width: 100%;

@@ -1,0 +1,11 @@
+.search-actor {
+  background-color: transparent !important;
+  border: 1px solid #BFBFBF !important;
+}
+.search-actor input {
+  background-color: transparent !important;
+  width: 180px !important;
+  border: none !important;
+  padding: 0 0.5rem !important;
+  color: white !important;
+}
