@@ -1,12 +1,9 @@
 /// app/page.tsx
 "use client"
-
 import "./style/style.css"
-
 import { useEffect } from 'react';
 
 export default function Page() {
-
   /// home 페이지에 body 클래스 다르게줘서 배경스타일 관리
   /*  useEffect(() => {
      document.body.classList.add('layout-home');
