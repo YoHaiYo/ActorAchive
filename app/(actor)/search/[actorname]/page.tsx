@@ -3,6 +3,7 @@ import ActorsCard from "../../../../front/component/actorsCard";
 import ActorsCast from "../../../../front/component/actorsCard";
 import ActorsSearchCard from "../../../../front/component/actorsSearchCard";
 import "./style/style.css"
+import "../../actor/[id]/style/style.css"
 export const metadata = {
   title: "Search"
 }
@@ -38,7 +39,7 @@ export default async function Page(
                 actor_popularity={el.popularity}
               />
               {/* 참여작품들 */}
-              <div>
+              {/* <div>
                 <h3 className="text-center text-white my-3">Filmography</h3>
                 <div className="d-flex flex-wrap justify-content-center">
                   {
@@ -52,7 +53,7 @@ export default async function Page(
                     })
                   }
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="infocard-divider" />
           </div>

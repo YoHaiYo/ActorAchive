@@ -59,3 +59,11 @@
 .actor-info-gray {
   color: #BFBFBF;
 }
+
+.nomovie-img {
+  display: inline-block;
+  background-image: url("/img/movieplacehold.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+}

@@ -50,3 +50,31 @@
     }
   }
 }
+
+///
+.actor-detail-moviecard {
+  padding: 1rem;
+  margin: .5rem;
+  background-color: #1F1F1F;
+  border-radius: .5rem;
+
+  img {
+    // 원본비율 100 : 52 
+    width: var(--img-width);
+    height: calc(var(--img-width) * 0.52);
+    border-radius: .5rem;
+  }
+
+  .movie-title {
+    font-size: 1.2rem;
+  }
+}
+.nomovie-img {
+  display: inline-block;
+  // background-color: #BFBFBF;
+  background-image: url("/img/movieplacehold.png");
+  background-position: center;
+  background-size: cover;
+  opacity: .5;    
+
+}

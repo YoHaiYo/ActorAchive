@@ -40,3 +40,25 @@
     width: 90% !important;
   }
 }
+.actor-detail-moviecard {
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: #1F1F1F;
+  border-radius: 0.5rem;
+}
+.actor-detail-moviecard img {
+  width: var(--img-width);
+  height: calc(var(--img-width) * 0.52);
+  border-radius: 0.5rem;
+}
+.actor-detail-moviecard .movie-title {
+  font-size: 1.2rem;
+}
+
+.nomovie-img {
+  display: inline-block;
+  background-image: url("/img/movieplacehold.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+}

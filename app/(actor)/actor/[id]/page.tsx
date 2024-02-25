@@ -79,10 +79,11 @@ export default async function Page(
                     </div>
                   </div>
                   <div className="d-flex justify-content-center my-2">
-                    <img src={`${Poster_API}/${el.backdrop_path}`} alt={el.name} />
+                    <img className={`${el.backdrop_path === null ? "nomovie-img" : ''}`} src={`${Poster_API}/${el.backdrop_path}`} alt={el.name} />
                   </div>
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-evenly align-items-center">
                     <p className="me-2 movie-title">{el.title}</p>
+                    <p >{el.release_date}</p>
                   </div>
                 </div>
               )
