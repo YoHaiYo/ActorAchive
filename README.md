@@ -1,6 +1,8 @@
 ## Preview 
-![finedust_pv](https://github.com/YoHaiYo/react-finedust-app-rebuild/assets/124754510/a281ceb9-edec-4435-b3e4-362cfcb22ab3)
+![image](https://github.com/YoHaiYo/ActorArchive/assets/124754510/e5554384-116f-41b9-9fa9-92e9a2af45d3)
 
+![image](https://github.com/YoHaiYo/ActorArchive/assets/124754510/adb3b27d-25d9-4aa9-adca-8d6d8a80634c)
+	
 ## 배포용 링크
 https://actorarchive.vercel.app/
 
@@ -16,7 +18,7 @@ https://actorarchive.vercel.app/
 - 한글/영어 모두 검색가능하고 검색한 배우들의 종합점수도 볼 수 있게 하여 사용자들이 배우 정보를 탐색하는 재미를 얻게 하였습니다.
 
 ## 피그마 기획
-(링크바로가기)[https://www.figma.com/file/YoztuZE2rJGrX8PQGnnCyQ/ActorArchive?type=design&node-id=0-1&mode=design&t=OYgQjUIHA5ctLd21-0]
+[링크바로가기](https://www.figma.com/file/YoztuZE2rJGrX8PQGnnCyQ/ActorArchive?type=design&node-id=0-1&mode=design&t=OYgQjUIHA5ctLd21-0)
 
 ## 프로젝트 특징
 1. Next JS를 통해 서버사이드랜더링 방식으로 개발되어 SEO 최적화 및 사용자 랜더링 경험을 향상시켰습니다.
